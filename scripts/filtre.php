@@ -55,7 +55,18 @@ function TrouveData($fichiers, $cle, $valeur)
     return $donneesfiltre;
 }
 
+// Récupérer les valeurs du formulaire
+$fichiersAComparer = isset($_POST['fichiers']) ? $_POST['fichiers'] : array();
+$cleFilter = isset($_POST['cle']) ? $_POST['cle'] : null;
+$valeurFilter = isset($_POST['valeur']) ? $_POST['valeur'] : null;
+
+// Obtenir les données filtrées
+$donneesFiltrees = TrouveData($fichiersAComparer, $cleFilter, $valeurFilter);
+
+// Renvoyer les données au format JSON
+echo json_encode($donneesFiltrees);
 ?>
+
 
 
 <form action="filtre.php" method="post">
