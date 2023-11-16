@@ -13,6 +13,7 @@ crossorigin=""/>
 </head>
 <body>
 
+
     <!--<div class="wrapper"></div>
 <div id="map"></div>
 
@@ -65,7 +66,9 @@ crossorigin=""></script>
         
       
       
-      <script>
+        <script type="module">
+          import { Chart } from 'https://cdn.jsdelivr.net/npm/chart.js@2.9.5/dist/chart.mjs';
+        
         const FilleGarçon = document.getElementById('myChart');
       
         new Chart(FilleGarçon, {
@@ -127,8 +130,8 @@ crossorigin=""></script>
       </script>
     </div>
     
-    <script src="https://cdn.jsdelivr.net/npm/chart.mjs"></script>
-    
+   
+   
     
     
       
@@ -151,9 +154,15 @@ crossorigin=""></script>
 
       <div class="input-control">
         <label for="search">
-          <img src"image/search.svg">
         </label>
+        <input type="text" id="search" placeholder="Search for an name"
       </div>
+      
+<h2 class="main-title">Database Results</h2>
+
+<div class="table">
+  <h3 class="table-title"Name</h3> 
+</div>
 
      </main>
 
