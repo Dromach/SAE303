@@ -108,7 +108,9 @@ crossorigin=""></script>
     <div>
       <div class="w3-container w3-black">
       <canvas id="myChart"></canvas>
-      <script>
+      <script type="module">
+        import { Chart } from 'https://cdn.jsdelivr.net/npm/chart.js@2.9.5/dist/chart.mjs';
+        
         const departement = document.getElementById('myChart');
       
         new Chart(departement, {
@@ -157,16 +159,23 @@ crossorigin=""></script>
       <div class="input-control">
         <label for="search">
         </label>
-        <input type="text" id="search" placeholder="Search for an name"
+        <input type="text" id="search" placeholder="Search for an name" />
       </div>
+    </div>
+
       
 <h2 class="main-title">Database Results</h2>
 
 <div class="table">
-  <h3 class="table-title"Name</h3> 
+  <h3 class="table-title">Name</h3>
 </div>
 
-<div class="table-results"></div>
+<div class="table-results">
+<div class="table-item">
+  <p class="name"></p>
+</div>
+
+</div>
      </main>
 
     </div>
