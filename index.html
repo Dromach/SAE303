@@ -1,44 +1,134 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>W3.CSS Template</title>
+<title>Data Visualisation</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-body,h1,h5 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-image: url('/w3images/onepage_restaurant.jpg');
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-</style>
+<link rel="stylesheet" href="styles/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+crossorigin=""/>
+<script src="path/to/chartjs/dist/chart.umd.js" defer></script>
 </head>
 <body>
+    <!--<div class="wrapper"></div>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+crossorigin=""></script>
+
+    <script src="./app.js"></script>-->
 
 <div class="bgimg w3-display-container w3-text-white">
   <div class="w3-display-middle w3-jumbo">
-    <p>logo</p>
+    <p>Les naissances en île de france et dans l'Oise en 2004</p>
   </div>
   <div class="w3-display-topleft w3-container w3-xlarge">
-    <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">menu</button></p>
-    <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">contact</button></p>
-  </div>
-  <div class="w3-display-bottomleft w3-container">
-    <p class="w3-xlarge">monday - friday 10-23 | saturday 14-02</p>
-    <p class="w3-large">42 village St, New York</p>
-    <p>powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    <p><button onclick="document.getElementById('F-VS-G').style.display='block'" class="w3-button w3-black">Fille VS Garçon</button></p>
+    <p><button onclick="document.getElementById('N-D').style.display='block'" class="w3-button w3-black">Naissance par départements</button></p>
+    <p><button onclick="document.getElementById('N-P').style.display='block'" class="w3-button w3-black">Naissance par prénom</button></p>
   </div>
 </div>
 
-<!-- Menu Modal -->
-<div id="menu" class="w3-modal">
+<!-- F-VS-G Modal -->
+<div id="F-VS-G" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
     <div class="w3-container w3-black w3-display-container">
-      <span onclick="document.getElementById('menu').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <span onclick="document.getElementById('F-VS-G').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1>Filtres</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Tomato Soup <b>$2.50</b></h5>
+      <h5>Chicken Salad <b>$3.50</b></h5>
+      <h5>Bread and Butter <b>$1.00</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Résultats</h1>
+    </div>
+    <div class="w3-container">
+          <!-- <div style="width: 500px;"><canvas id="dimensions"></canvas></div><br/> -->
+    <canvas id="acquisitions"></canvas>
+
+    <!-- <script type="module" src="dimensions.js"></script> -->
+    <script type="module" src="scripts/app.js"></script>
+    </div>
+  </div>
+</div>
+
+<!-- N-D Modal -->
+<div id="N-D" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black">
+      <span onclick="document.getElementById('N-D').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1>Filtres</h1>
+    </div>
+    <div class="w3-container">
+      
+
+      <p><button class="w3-button" type="submit">Appliquer</button></p>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Résultats</h1>
+
+
+
+<style type="text/css">
+  .chartbox {
+    width: 700px; 
+  }
+</style>
+
+      <div class="chartbox"></div>
+        <canvas id="myChart"></canvas>
+      </div>
+
+      <div class="w3-container">
+      
+
+        
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>j'
+      
+    </div>
+      
+    
+    
+      
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- N-P Modal-->
+<div id="N-P" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black w3-display-container">
+      <span onclick="document.getElementById('N-P').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
       <h1>Starters</h1>
     </div>
     <div class="w3-container">
@@ -68,26 +158,6 @@ body, html {height: 100%}
   </div>
 </div>
 
-<!-- Contact Modal -->
-<div id="contact" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom">
-    <div class="w3-container w3-black">
-      <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
-      <h1>Contact</h1>
-    </div>
-    <div class="w3-container">
-      <p>Reserve a table, ask for today's special or just send us a message:</p>
-      <form action="/action_page.php" target="_blank">
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
-        <p><button class="w3-button" type="submit">SEND MESSAGE</button></p>
-      </form>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>
-
