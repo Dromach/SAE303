@@ -26,3 +26,7 @@ if ($response !== null) {
 }
 
 ?>
+
+<?php
+
+?>

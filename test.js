@@ -1,6 +1,6 @@
         const FilleGarçon = document.getElementById('myChart');
       
-        new Chart(ctx, {
+        new Chart(FilleGarçon, {
           type: 'pie',
           data: {
             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],

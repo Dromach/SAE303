@@ -48,31 +48,8 @@ crossorigin=""></script>
     <div class="w3-container w3-black">
       <h1>Résultats</h1>
     </div>
-    <div class="w3-container">
-          <!-- <div style="width: 500px;"><canvas id="dimensions"></canvas></div><br/> -->
-    <canvas id="acquisitions"></canvas>
-
-    <!-- <script type="module" src="dimensions.js"></script> -->
-    <script type="module" src="scripts/app.js"></script>
-    </div>
-  </div>
-</div>
-
-<!-- N-D Modal -->
-<div id="N-D" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom">
-    <div class="w3-container w3-black">
-      <span onclick="document.getElementById('N-D').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
-      <h1>Filtres</h1>
-    </div>
-    <div class="w3-container">
-      
-
-      <p><button class="w3-button" type="submit">Appliquer</button></p>
-    </div>
     <div class="w3-container w3-black">
       <h1>Résultats</h1>
-
 
 
 <style type="text/css">
@@ -92,9 +69,9 @@ crossorigin=""></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       
       <script>
-        const ctx = document.getElementById('myChart');
+        const FilleGarçon = document.getElementById('myChart');
       
-        new Chart(ctx, {
+        new Chart(FilleGarçon, {
           type: 'pie',
           data: {
             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -108,16 +85,59 @@ crossorigin=""></script>
 
           }
         });
-      </script>j'
+      </script>
       
     </div>
+  </div>
+</div>
+
+<!-- N-D Modal -->
+<div id="N-D" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black">
+      <span onclick="document.getElementById('N-D').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1>Filtres</h1>
+    </div>
+    <div class="w3-container">
       
+
+      <p><button class="w3-button" type="submit">Appliquer</button></p>
+    </div>
+    <div>
+      <div class="w3-container w3-black">
+      <canvas id="myChart"></canvas>
+    </div>
     
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+      const departement = document.getElementById('myChart');
+    
+      new Chart(departement, {
+        type: 'bar',
+        data: {
+          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
     
       
       </form>
     </div>
   </div>
+</div>
 </div>
 
 <!-- N-P Modal-->
