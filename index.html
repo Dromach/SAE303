@@ -103,32 +103,33 @@ crossorigin=""></script>
     <div>
       <div class="w3-container w3-black">
       <canvas id="myChart"></canvas>
-    </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <script>
-      const departement = document.getElementById('myChart');
-    
-      new Chart(departement, {
-        type: 'bar',
-        data: {
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-          datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1
-          }]
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true
+      <script>
+        const departement = document.getElementById('myChart');
+      
+        new Chart(departement, {
+          type: 'bar',
+          data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
             }
           }
-        }
-      });
-    </script>
+        });
+      </script>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.mjs"></script>
+    
+    
     
       
       </form>
@@ -150,7 +151,7 @@ crossorigin=""></script>
 
       <div class="input-control">
         <label for="search">
-          <img src"images/search.svg>
+          <img src"image/search.svg">
         </label>
       </div>
 
