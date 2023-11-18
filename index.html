@@ -41,42 +41,73 @@ crossorigin=""/>
     </div>
   </div>
 
-  <!-- F-VS-G Modal -->
-  <div id="F-VS-G" class="w3-modal">
-    <div class="w3-modal-content w3-animate-zoom">
-      <div class="w3-container w3-black w3-display-container">
-        <span class="w3-button w3-display-topright w3-large" data-Mod1off>x</span>
-        <h1>Filtres</h1>
-      </div>
-      <div class="w3-container">
-        <h5>Tomato Soup <b>$2.50</b></h5>
-        <h5>Chicken Salad <b>$3.50</b></h5>
-        <h5>Bread and Butter <b>$1.00</b></h5>
-      </div>
-      <div class="w3-container w3-black">
-        <h1>Résultats</h1>
-        <canvas id="FilleVSGarcons"></canvas>
-      </div>
+<!-- F-VS-G Modal -->
+<div id="F-VS-G" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black w3-display-container">
+      <span onclick="document.getElementById('F-VS-G').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1>Filtres</h1>
     </div>
-  </div>
+    <div class="w3-container">
+      <h5>Tomato Soup <b>$2.50</b></h5>
+      <h5>Chicken Salad <b>$3.50</b></h5>
+      <h5>Bread and Butter <b>$1.00</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Résultats</h1>
 
-  <!-- N-D Modal -->
-  <div id="N-D" class="w3-modal">
-    <div class="w3-modal-content w3-animate-zoom">
-      <div class="w3-container w3-black">
-        <span class="w3-button w3-display-topright w3-large" data-Mod2off>x</span>
-        <h1>Filtres</h1>
+
+<style type="text/css">
+  .chartbox {
+    width: 400px; 
+  }
+</style>
+
+      <div class="chartbox"></div>
+        <canvas id="Chart"></canvas>
       </div>
+
       <div class="w3-container">
-        <p><button class="w3-button" type="submit">Appliquer</button></p>
-      </div>
-      <div>
-        <div class="w3-container w3-black">
-          <canvas id="myChart"></canvas> 
-        </div>
-      </div>
+      
+
+        
+      
+      
+        
+      
     </div>
   </div>
+</div>
+
+<!-- N-D Modal -->
+<div id="N-D" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black">
+      <span onclick="document.getElementById('N-D').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1>Filtres</h1>
+    </div>
+    <div class="w3-container">
+      
+
+      <p><button class="w3-button" type="submit">Appliquer</button></p>
+    </div>
+    <div>
+      <div class="w3-container w3-black">
+      <canvas id="myChart"></canvas>
+      
+      
+    </div>
+    
+   
+   
+    
+    
+      
+      </form>
+    </div>
+  </div>
+</div>
+</div>
 
   <!-- N-P Modal-->
   <div id="N-P" class="w3-modal">
