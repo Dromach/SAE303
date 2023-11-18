@@ -47,9 +47,30 @@ crossorigin=""></script>
       <h1>Filtres</h1>
     </div>
     <div class="w3-container">
-      <h5>Tomato Soup <b>$2.50</b></h5>
-      <h5>Chicken Salad <b>$3.50</b></h5>
-      <h5>Bread and Butter <b>$1.00</b></h5>
+      
+      <form  method="post">
+        <label for="fichiers">Sélectionnez les fichiers à comparer :</label>
+        <select name="fichiers[]" id="fichiers" multiple>
+            <option value="naissances-2004-60.json">Oise</option>
+            <option value="naissance-2004-75.json">Paris</option>
+            <option value="naissance-2004-77.json">Seine-et-Marne</option>
+            <option value="naissance-2004-78.json">Yvelines</option>
+            <option value="naissance-2004-91.json">Val-de-Marne</option> 
+            <option value="naissance-2004-92.json">Haut-de-Seine</option>
+            <option value="naissance-2004-93.json">Seine-Saint-Denis</option>
+            <option value="naissance-2004-95.json">Val d'Oise</option>
+            <!-- Ajoutez autant d'options que nécessaire pour vos fichiers -->
+        </select>
+        </form>
+
+  <label for="cle">Clé de filtrage :</label>
+  <input type="text" name="cle" id="cle" required>
+
+  <label for="valeur">Valeur de filtrage :</label>
+  <input type="text" name="valeur" id="valeur" required>
+
+  <button type="submit">Rechercher</button>
+</form>
     </div>
     <div class="w3-container w3-black">
       <h1>Résultats</h1>
@@ -81,7 +102,7 @@ crossorigin=""></script>
 <div id="N-D" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
     <div class="w3-container w3-black">
-      <span onclick="document.getElementById('N-D').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <!--Changer le onclick--> <span onclick="document.getElementById('N-D').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
       <h1>Filtres</h1>
     </div>
     <div class="w3-container">
