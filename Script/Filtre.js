@@ -18,7 +18,7 @@
 {"preusuel":"ALEXANDRA","sexe":2,"dpt":"60","annais":"2004","nombre":7},
 {"preusuel":"ALEXANDRE","sexe":1,"dpt":"60","annais":"2004","nombre":42}];*/
 
-const data = fetch('naissances-2004-60.json');
+const data = fetch('Données/naissances-2004-60.json');
 
 const filtre = _.filter(data, {"sexe" : 1});
 console.log(filtre);
