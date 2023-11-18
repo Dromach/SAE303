@@ -12,139 +12,95 @@ integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
 crossorigin=""/>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" defer></script>
-<script src="gestionchart.js" defer></script>
-<script src="gestionschart.js" defer></script>
+
+<script src="Script/gestionchart.js" defer></script>
+<script src="Script/gestionschart.js" defer></script>
+<script src="Script/gestionpopup.js" defer></script>
+<script src="Script/Filtre.js" defer></script>
+
+
+<script src="Données/naissances-2004-60.json" defer></script>
+<script src="Données/naissances-2004-75.json" defer></script>
+<script src="Données/naissances-2004-77.json" defer></script>
+<script src="Données/naissances-2004-78.json" defer></script>
+<script src="Données/naissances-2004-91.json" defer></script>
+<script src="Données/naissances-2004-92.json" defer></script>
+<script src="Données/naissances-2004-93.json" defer></script>
+<script src="Données/naissances-2004-95.json" defer></script>
+
 </head>
 <body>
-
-
-    <!--<div class="wrapper"></div>
-<div id="map"></div>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-crossorigin=""></script>
-
-    <script src="./app.js"></script>-->
-
-
-<div class="bgimg w3-display-container w3-text-white">
-  <div class="w3-display-middle w3-jumbo">
-    <p>Les naissances en île de france et dans l'Oise en 2004</p>
-  </div>
-  <div class="w3-display-topleft w3-container w3-xlarge">
-    <p><button onclick="document.getElementById('F-VS-G').style.display='block'" class="w3-button w3-black">Fille VS Garçon</button></p>
-    <p><button onclick="document.getElementById('N-D').style.display='block'" class="w3-button w3-black">Naissance par départements</button></p>
-    <p><button onclick="document.getElementById('N-P').style.display='block'" class="w3-button w3-black">Naissance par prénom</button></p>
-  </div>
-</div>
-
-<!-- F-VS-G Modal -->
-<div id="F-VS-G" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom">
-    <div class="w3-container w3-black w3-display-container">
-      <span onclick="document.getElementById('F-VS-G').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
-      <h1>Filtres</h1>
+  <div class="bgimg w3-display-container w3-text-white">
+    <div class="w3-display-middle w3-jumbo">
+      <p>Les naissances en île de france et dans l'Oise en 2004</p>
     </div>
-    <div class="w3-container">
-      <h5>Tomato Soup <b>$2.50</b></h5>
-      <h5>Chicken Salad <b>$3.50</b></h5>
-      <h5>Bread and Butter <b>$1.00</b></h5>
+    <div class="w3-display-topleft w3-container w3-xlarge">
+      <p><button class="w3-button w3-black" data-Mod1>Fille VS Garçon</button></p>
+      <p><button class="w3-button w3-black" data-Mod2>Naissance par départements</button></p>
+      <p><button class="w3-button w3-black" data-Mod3>Naissance par prénom</button></p>
     </div>
-    <div class="w3-container w3-black">
-      <h1>Résultats</h1>
+  </div>
 
-
-<style type="text/css">
-  .chartbox {
-    width: 400px; 
-  }
-</style>
-
-      <div class="chartbox"></div>
-        <canvas id="Chart"></canvas>
+  <!-- F-VS-G Modal -->
+  <div id="F-VS-G" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom">
+      <div class="w3-container w3-black w3-display-container">
+        <span class="w3-button w3-display-topright w3-large" data-Mod1off>x</span>
+        <h1>Filtres</h1>
       </div>
-
       <div class="w3-container">
-      
-
-        
-      
-      
-        
-      
-    </div>
-  </div>
-</div>
-
-<!-- N-D Modal -->
-<div id="N-D" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom">
-    <div class="w3-container w3-black">
-      <span onclick="document.getElementById('N-D').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
-      <h1>Filtres</h1>
-    </div>
-    <div class="w3-container">
-      
-
-      <p><button class="w3-button" type="submit">Appliquer</button></p>
-    </div>
-    <div>
+        <h5>Tomato Soup <b>$2.50</b></h5>
+        <h5>Chicken Salad <b>$3.50</b></h5>
+        <h5>Bread and Butter <b>$1.00</b></h5>
+      </div>
       <div class="w3-container w3-black">
-      <canvas id="myChart"></canvas>
-      
-      
-    </div>
-    
-   
-   
-    
-    
-      
-      </form>
-    </div>
-  </div>
-</div>
-</div>
-
-<!-- N-P Modal-->
-<div id="N-P" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom">
-    <div class="w3-container w3-black w3-display-container">
-      <span onclick="document.getElementById('N-P').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
-
-      <h1>Recherche</h1>
-    </div>
-    <div class="w3-container">
-     <main class="main">
-
-      <div class="input-control">
-        <label for="search">
-        </label>
-        <input type="text" id="search" placeholder="Search for an name" />
+        <h1>Résultats</h1>
+        <canvas id="FilleVSGarcons"></canvas>
       </div>
     </div>
-
-      
-<h2 class="main-title">Database Results</h2>
-
-<div class="table">
-  <h3 class="table-title">Name</h3>
-</div>
-
-<div class="table-results">
-<div class="table-item">
-  <p class="name"></p>
-</div>
-
-</div>
-     </main>
-
-    </div>
-   
   </div>
-</div>
 
+  <!-- N-D Modal -->
+  <div id="N-D" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom">
+      <div class="w3-container w3-black">
+        <span class="w3-button w3-display-topright w3-large" data-Mod2off>x</span>
+        <h1>Filtres</h1>
+      </div>
+      <div class="w3-container">
+        <p><button class="w3-button" type="submit">Appliquer</button></p>
+      </div>
+      <div>
+        <div class="w3-container w3-black">
+          <canvas id="myChart"></canvas> 
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- N-P Modal-->
+  <div id="N-P" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom">
+      <div class="w3-container w3-black w3-display-container">
+        <span class="w3-button w3-display-topright w3-large" data-Mod3off>x</span>
+        <h1>Recherche</h1>
+      </div>
+      <div class="w3-container">
+        <div class="input-control">
+          <label for="search">
+          <input type="text" id="search" placeholder="Search for an name" />
+        </div>
+      </div>   
+      <h2 class="main-title">Database Results</h2>
+      <div class="table">
+        <h3 class="table-title">Name</h3>
+      </div>
+      <div class="table-results">
+        <div class="table-item">
+          <p class="name"></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

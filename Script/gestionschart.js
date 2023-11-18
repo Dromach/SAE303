@@ -1,4 +1,4 @@
-const FilleGarçon = document.getElementById('Chart');
+const FilleGarçon = document.getElementById('FilleVSGarcons');
       
         new Chart(FilleGarçon, {
           type: 'pie',
