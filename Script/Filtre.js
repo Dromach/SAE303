@@ -7,7 +7,7 @@ console.log(filtre);*/
 
 const data = fetch('Données/test.json');
 
-const filtre = _.filter(data, {"sexe" : 1});
+const filtre = _.filter(data, {name: 'John'});
 console.log(filtre);
 
 
