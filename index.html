@@ -33,12 +33,20 @@ crossorigin=""/>
 <body>
   <div class="bgimg w3-display-container w3-text-white">
     <div class="w3-display-middle w3-jumbo">
-      <p>Les naissances en île de france et dans l'Oise en 2004</p>
+      <p class="text-align-right">Les naissances en île de france et dans l'Oise en 2004</p>
     </div>
     <div class="w3-display-topleft w3-container w3-xlarge">
       <p><button class="w3-button w3-black" data-Mod1>Fille VS Garçon</button></p>
       <p><button class="w3-button w3-black" data-Mod2>Naissance par départements</button></p>
-      <p><button class="w3-button w3-black" data-Mod3>Naissance par prénom</button></p>
+      <p><button class="w3-button w3-black" data-Mod3>Naissance par prénom : Oise</button></p>
+      <p><button class="w3-button w3-black" data-Mod4>Naissance par prénom : Paris</button></p>
+      <p><button class="w3-button w3-black" data-Mod5>Naissance par prénom : Seine-et-Marne</button></p>
+      <p><button class="w3-button w3-black" data-Mod6>Naissance par prénom : Yvelines</button></p>
+      <p><button class="w3-button w3-black" data-Mod7>Naissance par prénom : Seine-et-Marne</button></p>
+      <p><button class="w3-button w3-black" data-Mod8>Naissance par prénom : Val-de-Marne</button></p>
+      <p><button class="w3-button w3-black" data-Mod9>Naissance par prénom : Haut-de-Seine</button></p>
+      <p><button class="w3-button w3-black" data-Mod10>Naissance par prénom : Seine-Saint-Denis</button></p>
+      <p><button class="w3-button w3-black" data-Mod8>Naissance par prénom : Val d'Ois</button></p>
     </div>
   </div>
 
@@ -46,7 +54,7 @@ crossorigin=""/>
 <div id="F-VS-G" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
     <div class="w3-container w3-black w3-display-container">
-      <span class="w3-button w3-display-topright w3-large" data-Mod1off>x</span>
+      <span class="w3-button w3-display-topright w3-large" data-Mod1off></span>
       <h1>Filtres</h1>
     </div>
     <div class="w3-container">
@@ -55,7 +63,7 @@ crossorigin=""/>
         <option value="Donnees/naissances-2004-75.json">Paris</option>
         <option value="Donnees/naissances-2004-77.json">Seine-et-Marne</option>
         <option value="Donnees/naissances-2004-78.json">Yvelines</option>
-        <option value="Donnees/naissances-2004-91.json">Val-de-Marne</option> 
+        <option value="Donnees/naissances-2004-91.json">Essonnes</option> 
         <option value="Donnees/naissances-2004-92.json">Haut-de-Seine</option>
         <option value="Donnees/naissances-2004-93.json">Seine-Saint-Denis</option>
         <option value="Donnees/naissances-2004-95.json">Val d'Oise</option>
@@ -72,7 +80,7 @@ crossorigin=""/>
 <div id="N-D" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
     <div class="w3-container w3-black">
-      <span class="w3-button w3-display-topright w3-large" data-Mod2off>x</span>
+      <span class="w3-button w3-display-topright w3-large" data-Mod2off></span>
       <h1>Filtres</h1>
     </div>
     <div class="w3-container" id="departement">
@@ -102,19 +110,110 @@ crossorigin=""/>
   </div>
 </div>
 
-<!-- N-Prenom Modal -->
-<div id="N-P" class="w3-modal">
+<!-- N-60 Modal -->
+<div id="N-60" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
       <div class="w3-container w3-black w3-display-container">
-          <span onclick="document.getElementById('N-P').style.display='none'" class="w3-button w3-display-topright w3-large"></span>
+        <span class="w3-button w3-display-topright w3-large" data-Mod3off></span>
+          <span onclick="document.getElementById('N-60').style.display='none'" class="w3-button w3-display-topright w3-large"></span>
           <h1>Recherche</h1>
-          <script src="Script/recherche.js"></script>
+          <script src="Script/recherche60.js"></script>
+          <input type="text" id='search-input60' placeholder="Rechercher...">
+          <ul id='search-results60'></ul>
+          <canvas id="prenom60">
+            <canvas id="barChart60">
+        
+           
+ <!-- N-75 Modal -->
+<div id="N-75" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+      <div class="w3-container w3-black w3-display-container">
+          <span onclick="document.getElementById('N-75').style.display='none'" class="w3-button w3-display-topright w3-large"></span>
+          <h1>Recherche</h1>
+          <script src="Script/recherche75.js"></script>
+          <input type="text" id='search-input75' placeholder="Rechercher...">
+          <ul id='search-results75'></ul>
+          <canvas id="prenom75">
+            <canvas id="barChart75">
+        
+ <!-- N-77 Modal -->
+<div id="N-77" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+      <div class="w3-container w3-black w3-display-container">
+          <span onclick="document.getElementById('N-77').style.display='none'" class="w3-button w3-display-topright w3-large"></span>
+          <h1>Recherche</h1>
+          <script src="Script/recherche77.js"></script>
+          <input type="text" id='search-input77' placeholder="Rechercher...">
+          <ul id='search-results77'></ul>
+          <canvas id="prenom77">
+            <canvas id="barChart77">
+             
+
+ <!-- N-78 Modal -->
+ <div id="N-78" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+      <div class="w3-container w3-black w3-display-container">
+          <span onclick="document.getElementById('N-78').style.display='none'" class="w3-button w3-display-topright w3-large"></span>
+          <h1>Recherche</h1>
+          <script src="Script/recherche78.js"></script>
+          <input type="text" id='search-input78' placeholder="Rechercher...">
+          <ul id='search-results78'></ul>
+          <canvas id="prenom78">
+            <canvas id="barChart78">
+        
+        
+  <!-- N-91 Modal -->
+<div id="N-91" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+      <div class="w3-container w3-black w3-display-container">
+          <span onclick="document.getElementById('N-91').style.display='none'" class="w3-button w3-display-topright w3-large"></span>
+          <h1>Recherche</h1>
+          <script src="Script/recherche91.js"></script>
+          <input type="text" id='search-input91' placeholder="Rechercher...">
+          <ul id='search-results91'></ul>
+          <canvas id="prenom91">
+            <canvas id="barChart91">
+                 
+
+   <!-- N-92 Modal -->
+<div id="N-92" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+      <div class="w3-container w3-black w3-display-container">
+          <span onclick="document.getElementById('N-92').style.display='none'" class="w3-button w3-display-topright w3-large"></span>
+          <h1>Recherche</h1>
+          <script src="Script/recherche92.js"></script>
+          <input type="text" id='search-input92' placeholder="Rechercher...">
+          <ul id='search-results'></ul>
+          <canvas id="prenom92">
+            <canvas id="barChart92">
+                 
+  
+  <!-- N-93 Modal -->
+<div id="N-93" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+      <div class="w3-container w3-black w3-display-container">
+          <span onclick="document.getElementById('N-93').style.display='none'" class="w3-button w3-display-topright w3-large"></span>
+          <h1>Recherche</h1>
+          <script src="Script/recherche93.js"></script>
           <input type="text" id='search-input' placeholder="Rechercher...">
           <ul id='search-results'></ul>
-          <canvas id="prenom">
-            <canvas id="barChart">
-        <script src="Script/recherche.js"></script>
-           
+          <canvas id="prenom93">
+            <canvas id="barChart93">
+          
+        
+  <!-- N-95 Modal -->
+<div id="N-95" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+      <div class="w3-container w3-black w3-display-container">
+          <span onclick="document.getElementById('N-95').style.display='none'" class="w3-button w3-display-topright w3-large"></span>
+          <h1>Recherche</h1>
+          <script src="Script/recherche95.js"></script>
+          <input type="text" id='search-input95' placeholder="Rechercher...">
+          <ul id='search-results95'></ul>
+          <canvas id="prenom95">
+            <canvas id="barChart95">
+                       
+
 </body>
 </html>
 
