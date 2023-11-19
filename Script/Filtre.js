@@ -63,17 +63,16 @@ async function departementsGraph(selectedDepartments) {
         let total = _.sumBy(data, 'nombre');
         return total;
     });
-
-    // Préparez les données pour le graphique des barres
-    const labels = selectedDepartments.map(departement => departement.replace(/[^0-9a-zA-Z]/g, ''));
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'nombres de naissances',
-            data: totalsByDepartment.map(total => total)
-        }]
-    };
-
+// Préparez les données pour le graphique des barres
+const labels = selectedDepartments.map(departement => departement.replace(/[^0-9a-zA-Z]/g, ''));
+const data = {
+    labels: labels,
+    datasets: [{
+        label: 'nombres de naissances',
+        data: totalsByDepartment.map(total => total),
+        backgroundColor: 'rgba(75, 192, 192, 0.5)'
+    }]
+};
     // Mettez à jour le graphique des barres
     const ctx = document.getElementById('dep').getContext('2d');
     barConfig.data = data;
