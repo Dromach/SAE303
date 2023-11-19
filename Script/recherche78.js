@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Assurez-vous d'inclure la bibliothèque dans votre projet
 
       // Récupérez le canvas existant
-      var ctx = document.getElementById('barChart').getContext('2d');
+      var ctx = document.getElementById('barChart78').getContext('2d');
 
       // Vérifiez s'il y a déjà un graphique associé au canvas
       if (window.myChart) {
