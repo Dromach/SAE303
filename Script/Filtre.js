@@ -70,7 +70,7 @@ const data = {
     datasets: [{
         label: 'nombres de naissances',
         data: totalsByDepartment.map(total => total),
-        backgroundColor: 'rgba(75, 192, 192, 0.5)'
+        backgroundColor: 'rgba(255, 99, 132, 0.5)'
     }]
 };
     // Mettez à jour le graphique des barres
