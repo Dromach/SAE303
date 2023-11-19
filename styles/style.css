@@ -14,11 +14,11 @@ body, html {height: 100%}
 }
 
 
-#informations {
+#departement {
   display: flex;
 }
 
-#informations option {
+#departement option {
   
   margin-right: 5px; 
 }
