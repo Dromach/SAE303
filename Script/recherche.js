@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Fonction pour charger les données depuis le fichier JSON
   async function fetchData() {
     try {
-      const response = await fetch('Donnees/naissances-2004-93.json');
+      const response = await fetch('Donnees/naissances-2004-60.json');
       const data = await response.json();
       return data;
     } catch (error) {
