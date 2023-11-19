@@ -92,3 +92,49 @@ function hideGraph() {
         myBarChart = null;
     }
 }
+
+
+
+
+
+// Fonction pour charger les données depuis le fichier JSON
+async function fetchData() {
+    try {
+      const response = await fetch('naissances-2004-60.json');
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Erreur lors du chargement des données :', error);
+    }
+  }
+  
+  async function displayResults(searchTerm) {
+      // Réinitialiser la liste des résultats à chaque saisie
+      searchResults.innerHTML = '';
+    
+      // Charger les données depuis le fichier JSON
+      const data = await fetchData();
+    
+      // Filtrer les résultats en fonction du terme de recherche
+      var filteredResults = data.filter(function(item) {
+        return (
+          item.preusuel.toLowerCase().includes(searchTerm)
+          // Ajoutez d'autres propriétés selon vos besoins
+        );
+      });
+    
+      // Afficher les résultats filtrés
+      filteredResults.forEach(function(item) {
+        var resultItem = document.createElement('li');
+        resultItem.className = 'result-item';
+        resultItem.textContent = `${item.preusuel} `;
+        searchResults.appendChild(resultItem);
+      });
+    
+      // Afficher la liste des résultats
+      if (filteredResults.length > 0) {
+        searchResults.style.display = 'block';
+      } else {
+        searchResults.style.display = 'none';
+      }
+    }
