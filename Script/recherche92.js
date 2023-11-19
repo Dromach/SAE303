@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var searchInput = document.getElementById('search-input78');
-  var searchResults = document.getElementById('search-results78');
+  var searchInput = document.getElementById('search-input92');
+  var searchResults = document.getElementById('search-results92');
 
   // Écoutez les événements de saisie dans la barre de recherche
   searchInput.addEventListener('input', function() {
@@ -21,42 +21,35 @@ document.addEventListener('DOMContentLoaded', function() {
       afficherChart(selectedPreusuel);
     }
   });
-// Fonction pour créer un graphique à barres
-function createBarChart(departements, nombreNaissances) {
-  // Utilisez la bibliothèque de graphiques de votre choix (par exemple, Chart.js)
-  // Assurez-vous d'inclure la bibliothèque dans votre projet
 
-  // Récupérez le canvas existant
-  var ctx = document.getElementById('barChart78').getContext('2d');
-
-  // Vérifiez s'il y a déjà un graphique associé au canvas
-  if (window.myChart) {
-    // Si oui, détruisez-le avant de créer le nouveau graphique
-    window.myChart.destroy();
-  }
-
-  // Créez un nouveau graphique
-  window.myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: departements,
-      datasets: [{
-        label: 'Nombre de naissances',
-        data: nombreNaissances,
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
+  // Fonction pour créer un graphique à barres
+  function createBarChart(departements, nombreNaissances) {
+    // Utilisez la bibliothèque de graphiques de votre choix (par exemple, Chart.js)
+    // Assurez-vous d'inclure la bibliothèque dans votre projet
+    
+    // Exemple avec Chart.js
+    var ctx = document.getElementById('barChart92').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: departements,
+        datasets: [{
+          label: 'Nombre de naissances',
+          data: nombreNaissances,
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
         }
       }
-    }
-  });
-}
+    });
+  }
 
   // Fonction pour afficher la chart correspondante au prénom
   function afficherChart(preusuel) {
@@ -79,7 +72,7 @@ function createBarChart(departements, nombreNaissances) {
   // Fonction pour charger les données depuis le fichier JSON
   async function fetchData() {
     try {
-      const response = await fetch('Donnees/naissances-2004-78.json');
+      const response = await fetch('Donnees/naissances-2004-92.json');
       const data = await response.json();
       return data;
     } catch (error) {
