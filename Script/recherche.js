@@ -1,5 +1,6 @@
 
-document.addEventListener('DOMContentLoaded', function() {var searchInput = document.getElementById('search-input');
+document.addEventListener('DOMContentLoaded', function() {
+var searchInput = document.getElementById('search-input');
 var searchResults = document.getElementById('search-results');
 
 // Écoutez les événements de saisie dans la barre de recherche

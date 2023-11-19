@@ -17,7 +17,7 @@ crossorigin=""/>
 <script src="Script/gestionschart.js" defer></script>
 <script src="Script/gestionpopup.js" defer></script>
 <script src="Script/Filtre.js" defer></script>
-<script src="Script/recherche.js"></script>
+
 
 
 <script src="Donnees/naissances-2004-60.json" defer></script>
@@ -108,9 +108,11 @@ crossorigin=""/>
       <div class="w3-container w3-black w3-display-container">
           <span onclick="document.getElementById('N-P').style.display='none'" class="w3-button w3-display-topright w3-large"></span>
           <h1>Recherche</h1>
-          <input type="text" id="search-input" placeholder="Rechercher...">
-          <ul id="search-results"></ul>
+          <script src="Script/recherche.js"></script>
+          <input type="text" id='search-input' placeholder="Rechercher...">
+          <ul id='search-results'></ul>
           <canvas id="prenom">
+        <script src="Script/recherche.js"></script>
            
 </body>
 </html>
