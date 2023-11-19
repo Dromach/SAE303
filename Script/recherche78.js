@@ -21,59 +21,65 @@ document.addEventListener('DOMContentLoaded', function() {
       afficherChart(selectedPreusuel);
     }
   });
-// Fonction pour créer un graphique à barres
-function createBarChart(departements, nombreNaissances) {
-  // Utilisez la bibliothèque de graphiques de votre choix (par exemple, Chart.js)
-  // Assurez-vous d'inclure la bibliothèque dans votre projet
 
-  // Récupérez le canvas existant
-  var ctx = document.getElementById('barChart').getContext('2d');
+  // Fonction pour créer un graphique à barres
+  function createBarChart(departements, nombreNaissances) {
+    return new Promise((resolve, reject) => {
+      // Utilisez la bibliothèque de graphiques de votre choix (par exemple, Chart.js)
+      // Assurez-vous d'inclure la bibliothèque dans votre projet
 
-  // Vérifiez s'il y a déjà un graphique associé au canvas
-  if (window.myChart) {
-    // Si oui, détruisez-le avant de créer le nouveau graphique
-    window.myChart.destroy();
-  }
+      // Récupérez le canvas existant
+      var ctx = document.getElementById('barChart').getContext('2d');
 
-  // Créez un nouveau graphique
-  window.myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: departements,
-      datasets: [{
-        label: 'Nombre de naissances',
-        data: nombreNaissances,
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
+      // Vérifiez s'il y a déjà un graphique associé au canvas
+      if (window.myChart) {
+        // Si oui, détruisez-le avant de créer le nouveau graphique
+        window.myChart.destroy();
       }
-    }
-  });
-}
 
-  // Fonction pour afficher la chart correspondante au prénom
-  function afficherChart(preusuel) {
-    // Chargez les données depuis le fichier JSON
-    fetchData().then(function(data) {
-      // Filtrer les résultats pour le prénom sélectionné
-      const selectedData = data.filter(function(item) {
-        return item.preusuel.toLowerCase() === preusuel.toLowerCase();
+      // Créez un nouveau graphique
+      window.myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: departements,
+          datasets: [{
+            label: 'Nombre de naissances',
+            data: nombreNaissances,
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
       });
 
-      // Créez un tableau de départements et un tableau de nombres de naissances correspondants
-      const departements = selectedData.map(item => item.dpt);
-      const nombreNaissances = selectedData.map(item => item.nombre);
-
-      // Appelez une fonction pour créer le graphique à barres
-      createBarChart(departements, nombreNaissances);
+      // Résolvez la promesse une fois le graphique créé
+      resolve();
     });
+  }
+
+  // Fonction pour afficher la chart correspondante au prénom
+  async function afficherChart(preusuel) {
+    // Chargez les données depuis le fichier JSON
+    const data = await fetchData();
+
+    // Filtrer les résultats pour le prénom sélectionné
+    const selectedData = data.filter(function(item) {
+      return item.preusuel.toLowerCase() === preusuel.toLowerCase();
+    });
+
+    // Créez un tableau de départements et un tableau de nombres de naissances correspondants
+    const departements = selectedData.map(item => item.dpt);
+    const nombreNaissances = selectedData.map(item => item.nombre);
+
+    // Créez le graphique à barres
+    await createBarChart(departements, nombreNaissances);
   }
 
   // Fonction pour charger les données depuis le fichier JSON
