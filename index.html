@@ -101,29 +101,18 @@ crossorigin=""/>
   </div>
 </div>
 
-  <!-- N-P Modal-->
-  <div id="N-P" class="w3-modal">
-    <div class="w3-modal-content w3-animate-zoom">
+<!-- N-P Modal -->
+<div id="N-P" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
       <div class="w3-container w3-black w3-display-container">
-        <span class="w3-button w3-display-topright w3-large" data-Mod3off>x</span>
-        <h1>Recherche</h1>
-      </div>
-      <div class="w3-container">
-        <div class="input-control">
-          <label for="search">
-          <input type="text" id="search" placeholder="Search for an name" />
-        </div>
-      </div>   
-      <h2 class="main-title">Database Results</h2>
-      <div class="table">
-        <h3 class="table-title">Name</h3>
-      </div>
-      <div class="table-results">
-        <div class="table-item">
-          <p class="name"></p>
-        </div>
-      </div>
-    </div>
-  </div>
+          <span onclick="document.getElementById('N-P').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+          <h1>Recherche</h1>
+          <input type="text" id="search-input" placeholder="Rechercher...">
+          <ul id="search-results"></ul>
+          <canvas id="prenom">
+           
+          
+
 </body>
 </html>
+
