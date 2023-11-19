@@ -98,66 +98,41 @@ function hideGraph() {
 // Fonction pour charger les données depuis le fichier JSON
 async function fetchData() {
     try {
-        const response = await fetch('naissances-2004-60.json');
-        const data = await response.json();
-        return data;
+      const response = await fetch('naissances-2004-60.json');
+      const data = await response.json();
+      return data;
     } catch (error) {
-        console.error('Erreur lors du chargement des données :', error);
+      console.error('Erreur lors du chargement des données :', error);
     }
-}
-
-async function displayResults(searchTerm) {
-    // Réinitialiser la liste des résultats à chaque saisie
-    searchResults.innerHTML = '';
-
-    // Charger les données depuis le fichier JSON
-    const data = await fetchData();
-
-    // Filtrer les résultats en fonction du terme de recherche
-    const filteredResults = data.filter(function(item) {
+  }
+  
+  async function displayResults(searchTerm) {
+      // Réinitialiser la liste des résultats à chaque saisie
+      searchResults.innerHTML = '';
+    
+      // Charger les données depuis le fichier JSON
+      const data = await fetchData();
+    
+      // Filtrer les résultats en fonction du terme de recherche
+      var filteredResults = data.filter(function(item) {
         return (
-            item.preusuel.toLowerCase().includes(searchTerm)
-            // Ajoutez d'autres propriétés selon vos besoins
+          item.preusuel.toLowerCase().includes(searchTerm)
+          // Ajoutez d'autres propriétés selon vos besoins
         );
-    });
-
-    // Afficher les résultats filtrés
-    filteredResults.forEach(function(item) {
+      });
+    
+      // Afficher les résultats filtrés
+      filteredResults.forEach(function(item) {
         var resultItem = document.createElement('li');
         resultItem.className = 'result-item';
         resultItem.textContent = `${item.preusuel} `;
         searchResults.appendChild(resultItem);
-    });
-
-    // Afficher la liste des résultats
-    if (filteredResults.length > 0) {
+      });
+    
+      // Afficher la liste des résultats
+      if (filteredResults.length > 0) {
         searchResults.style.display = 'block';
-    } else {
+      } else {
         searchResults.style.display = 'none';
+      }
     }
-}
-
-// Ajoutez le gestionnaire d'événements pour le champ de recherche
-const searchInput = document.getElementById('search-input');
-searchInput.addEventListener('input', function() {
-    const searchTerm = searchInput.value.toLowerCase();
-    displayResults(searchTerm);
-    updateBarChart(searchTerm);
-});
-
-// Ajoutez le gestionnaire d'événements pour la fermeture du modal
-document.getElementById('N-P').addEventListener('click', function(event) {
-    if (event.target === this) {
-        hideGraph(); // Masquer le graphique lorsque le modal est fermé
-    }
-});
-
-// Gestionnaire d'événements pour le clic sur un résultat de recherche
-document.getElementById('search-results').addEventListener('click', function(event) {
-    if (event.target && event.target.nodeName === 'LI') {
-        const selectedName = event.target.textContent.trim();
-        searchInput.value = selectedName;
-        hideGraph(); // Masquer le graphique lors de la sélection d'un résultat
-        updateBarChart(selectedName);
-    }
-});
