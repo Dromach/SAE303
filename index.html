@@ -101,18 +101,20 @@ crossorigin=""/>
   </div>
 </div>
 
-<!-- N-P Modal -->
-<div id="N-P" class="w3-modal">
+ <!-- N-P Modal -->
+ <div id="N-P" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
       <div class="w3-container w3-black w3-display-container">
           <span onclick="document.getElementById('N-P').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
           <h1>Recherche</h1>
-          <input type="text" id="search-input" placeholder="Rechercher...">
+          <input type="text" id="search-input" placeholder="Rechercher..." oninput="handleSearchInput()">
           <ul id="search-results"></ul>
-          <canvas id="prenom">
-           
-          
+          <canvas id="prenom"></canvas>
+      </div>
+  </div>
+</div>
 
+<script src="Filtre.js"></script>
 </body>
 </html>
 
