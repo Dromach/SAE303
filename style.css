@@ -3,9 +3,21 @@
 body,h1,h5 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
-  background-image: url('/w3images/onepage_restaurant.jpg');
+  /*background-image: url('https://evasion-online.com/images/2015/11/france-departements-regions-jpg_1404372031-1024x958.jpg');*/
+  background-color: pink;
   min-height: 100%;
   background-position: center;
   background-size: cover;
 }
 
+#search-results {
+  list-style: none;
+  padding: 0;
+}
+
+.result-item {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  display: none;
+}
