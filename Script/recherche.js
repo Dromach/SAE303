@@ -13,9 +13,6 @@ searchInput.addEventListener('input', function() {
 
 // Fonction pour afficher la chart correspondante au prénom
 function afficherChart(preusuel) {
-    // Votre logique pour afficher la chart en fonction du prénom
-    // Par exemple, vous pourriez utiliser une bibliothèque de graphiques comme Chart.js
-    // ou manipuler directement le DOM pour afficher la chart
     console.log('Afficher la chart pour le prénom :', preusuel);
 }
 
@@ -42,7 +39,6 @@ async function displayResults(searchTerm) {
     var filteredResults = data.filter(function(item) {
       return (
         item.preusuel.toLowerCase().includes(searchTerm)
-        // Ajoutez d'autres propriétés selon vos besoins
       );
     });
   
